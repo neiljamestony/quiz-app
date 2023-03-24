@@ -15,6 +15,21 @@ export const DashboardCard = styled.div({
   fontFamily: "Poppins",
 });
 
+export const LoginCard = styled.div({
+  height: "200px",
+  width: "500px",
+  display: "block",
+  alignContent: "center",
+  justifyContent: "center",
+  boxShadow: "4px 4px 20px 0px #0000003d",
+  borderRadius: 8,
+  padding: 2,
+  backgroundColor: "#fff",
+  color: "#7882A4",
+  position: "relative",
+  fontFamily: "Poppins",
+});
+
 export const QuestionContainer = styled.div({
   minHeight: 150,
   lineBreak: "normal",
@@ -31,12 +46,17 @@ export const OptionsContainer = styled.div({
 export const OptionAnswer = styled.div({
   height: 37.5,
   display: "flex",
-  justifyContent: "center",
+  paddingLeft: 10,
   alignItems: "center",
+  textAlign: "left",
   gap: 10,
-  border: "1px solid gray",
   margin: 10,
   cursor: "pointer",
+  "&:hover": {
+    border: "0.5px solid #fff",
+    background: "#7eabf2 !important",
+    color: "#fff !important",
+  },
 });
 
 export const NextButton = styled.button({
@@ -82,4 +102,42 @@ export const MessageContainer = styled.div({
 
 export const MessageBox = styled.div({
   fontSize: 30,
+});
+
+export const LoginTitle = styled.div({
+  fontSize: 20,
+});
+
+export const InputField = styled.input({
+  width: "100%",
+  padding: 6,
+  fontFamily: "Poppins",
+  borderRadius: 5,
+  border: "1px solid #7882A4",
+  color: "#7882A4",
+});
+
+export const LoginButton = styled.button({
+  height: 35,
+  fontSize: 14,
+  width: "50%",
+  padding: 0,
+  margin: 0,
+  background: "#199ee0",
+  color: "#fff",
+});
+
+export const LoginHeader = styled.div({
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  marginTop: 25,
+});
+
+export const LoginBody = styled.div({
+  height: 50,
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  padding: 20,
 });

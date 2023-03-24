@@ -105,6 +105,7 @@ const questionSlice = createSlice({
         state.score = state.score + 1;
         state.questions[action.payload.index].isCorrect = true;
       }
+      state.answer = "";
     },
     isRoundDone: (state, action: PayloadAction<boolean>) => {
       state.isDone = action.payload;
