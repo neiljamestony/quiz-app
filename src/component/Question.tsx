@@ -1,11 +1,15 @@
 import { useAppSelector } from "../redux/store";
+import { useEffect } from "react";
 import {
   validateRound,
   isRoundDone,
   generateQuestion,
   getAnswer,
+  getCurrentOptions,
+  getQuestions,
 } from "../redux/reducer/QuestionSlice";
 import { useAppDispatch } from "../redux/store";
+import { questionsArr } from "./questions/question";
 import {
   QuestionContainer,
   OptionAnswer,
@@ -14,17 +18,29 @@ import {
 } from "../assets/css/main";
 
 const Question = () => {
-  const { questions, questionIndex, answer } = useAppSelector(
+  const { questions, questionIndex, answer, optionArr } = useAppSelector(
     (state) => state.questionState
   );
   const dispatch = useAppDispatch();
 
+  useEffect(() => {
+    let bool: boolean = !questions.length;
+    bool && dispatch(getQuestions(questionsArr));
+  }, [questions.length]);
+
+  useEffect(() => {
+    let bool: boolean = !questions.length;
+    !bool && dispatch(getCurrentOptions(questions[questionIndex].options));
+  }, [questions.length]);
+
   const validate_round = (index: number) => {
-    if (questions.length === questionIndex + 1) {
+    if (questions.length === index + 1) {
       dispatch(isRoundDone(true));
       dispatch(generateQuestion(index + 1));
       dispatch(validateRound({ answer: answer, index: index }));
+      dispatch(getCurrentOptions([]));
     } else {
+      dispatch(getCurrentOptions(questions[index + 1].options));
       dispatch(generateQuestion(index + 1));
       dispatch(validateRound({ answer: answer, index: index }));
     }
@@ -32,9 +48,11 @@ const Question = () => {
 
   return (
     <div>
-      <QuestionContainer>{questions[questionIndex].question}</QuestionContainer>
+      <QuestionContainer>
+        {questions.length && questions[questionIndex].question}
+      </QuestionContainer>
       <OptionsContainer>
-        {questions[questionIndex].options?.map((option, key) => {
+        {optionArr?.map((option, key) => {
           return (
             <OptionAnswer
               key={key}
