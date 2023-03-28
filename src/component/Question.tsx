@@ -6,10 +6,9 @@ import {
   generateQuestion,
   getAnswer,
   getCurrentOptions,
-  getQuestions,
 } from "../redux/reducer/QuestionSlice";
 import { useAppDispatch } from "../redux/store";
-import { questionsArr } from "./questions/question";
+import { useNavigate } from "react-router-dom";
 import {
   QuestionContainer,
   OptionAnswer,
@@ -22,16 +21,17 @@ const Question = () => {
     (state) => state.questionState
   );
   const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    let bool: boolean = !questions.length;
-    bool && dispatch(getQuestions(questionsArr));
-  }, [questions.length]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     let bool: boolean = !questions.length;
     !bool && dispatch(getCurrentOptions(questions[questionIndex].options));
   }, [questions.length]);
+
+  useEffect(() => {
+    let bool: boolean = !questions.length;
+    if (bool) return navigate("/category");
+  }, []);
 
   const validate_round = (index: number) => {
     if (questions.length === index + 1) {

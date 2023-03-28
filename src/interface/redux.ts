@@ -27,9 +27,9 @@ export interface MessageInterface {
 
 type stringArr = string[] | [];
 
-type testObj = QuestionsInterface[];
+type questionArray = QuestionsInterface[];
 
-export const shuffle_questions = (array: testObj) => {
+export const shuffle_questions = (array: questionArray) => {
   let shuffled = array
     .map((value) => ({ value, sort: Math.random() }))
     .sort((a, b) => a.sort - b.sort)
@@ -46,3 +46,12 @@ export const shuffle_answer = (array: stringArr) => {
 
   return shuffled;
 };
+export interface CategoryItemInterface {
+  title: string;
+  questions: QuestionsInterface[];
+}
+
+export interface CategoryInterface {
+  category: string;
+  questions: QuestionsInterface[];
+}

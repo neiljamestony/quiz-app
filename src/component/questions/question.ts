@@ -1,4 +1,4 @@
-import { QuestionsInterface } from "../../interface/redux";
+import { QuestionsInterface, CategoryInterface } from "../../interface/redux";
 export const questionsArr: QuestionsInterface[] = [
   {
     question: `Which author wrote 'Coraline'?`,
@@ -79,5 +79,197 @@ export const questionsArr: QuestionsInterface[] = [
     options: ["Lamborghini", "Linux", "Hermès", "Tripadvisor"],
     status: "pending",
     isCorrect: false,
+  },
+];
+
+export const Animals: QuestionsInterface[] = [
+  {
+    question: `What is the largest land animal?`,
+    answer: "Elephant",
+    options: ["Elephant", "Giraffe", "Hippopotamus", "Rhinoceros"],
+    status: "pending",
+    isCorrect: false,
+  },
+  {
+    question: `What is the fastest land animal?`,
+    answer: "Cheetah",
+    options: ["Cheetah", "Lion", "Gazelle", "Zebra"],
+    status: "pending",
+    isCorrect: false,
+  },
+  {
+    question: `What is the smallest mammal in the world?`,
+    answer: "Bat",
+    options: ["Bat", "Mouse", "Shrew", "Hamster"],
+    status: "pending",
+    isCorrect: false,
+  },
+  {
+    question: `What is the most venomous snake in the world?`,
+    answer: "Inland taipan",
+    options: ["Inland taipan", "Black mamba", "King cobra", "Rattlesnake"],
+    status: "pending",
+    isCorrect: false,
+  },
+  {
+    question: `What is the only mammal capable of sustained flight?`,
+    answer: "Bat",
+    options: ["Bat", "Flying squirrel", "Pterodactyl", "Gliding possum"],
+    status: "pending",
+    isCorrect: false,
+  },
+  {
+    question: `What animal is known as the 'king of the jungle'?`,
+    answer: "Lion",
+    options: ["Lion", "Tiger", "Elephant", "Gorilla"],
+    status: "pending",
+    isCorrect: false,
+  },
+  {
+    question: `What is the only continent without native reptiles or snakes?`,
+    answer: "Antarctica",
+    options: ["Antarctica", "Australia", "South America", "Africa"],
+    status: "pending",
+    isCorrect: false,
+  },
+  {
+    question: `What is the largest species of shark?`,
+    answer: "Whale shark",
+    options: [
+      "Whale shark",
+      "Great white shark",
+      "Tiger shark",
+      "Hammerhead shark",
+    ],
+    status: "pending",
+    isCorrect: false,
+  },
+  {
+    question: `What is the largest bird in the world?`,
+    answer: "Ostrich",
+    options: ["Ostrich", "Eagle", "Albatross", "Condor"],
+    status: "pending",
+    isCorrect: false,
+  },
+  {
+    question: `What is the fastest water animal?`,
+    answer: "Sailfish",
+    options: ["Sailfish", "Killer whale", "Dolphin", "Swordfish"],
+    status: "pending",
+    isCorrect: false,
+  },
+];
+
+export const History: QuestionsInterface[] = [
+  {
+    question: `Name the Shakespeare play from this plot summary: "Urged on by his wife, a man murders his king in order to take his place".?`,
+    answer: "Macbeth",
+    options: ["Macbeth", "Richard III", "Hamlet", "Romeo & Juliet"],
+    status: "pending",
+    isCorrect: false,
+  },
+  {
+    question: `Name the movie that matches the following plot summary: 'A high school student is sent thirty years into the past in a time-traveling car.'?`,
+    answer: "Back to the Future",
+    options: [
+      "The Truman Show",
+      "Raiders of the Lost Ark",
+      "Forrest Gump",
+      "Back to the Future",
+    ],
+    status: "pending",
+    isCorrect: false,
+  },
+  {
+    question: `Which American rhythm and blues girl group released the studio album 'Destiny Fulfilled'?`,
+    answer: `Destiny's Child`,
+    options: [
+      `Destiny's Child`,
+      "MercyMe",
+      "Three 6 Mafia",
+      "The Velvet Underground",
+    ],
+    status: "pending",
+    isCorrect: false,
+  },
+  {
+    question: `Which English-American psychedelic rock band released the song 'Purple Haze'?`,
+    answer: "The Jimi Hendrix Experience",
+    options: [
+      "The Jimi Hendrix Experience",
+      "Poison",
+      "The Pussycat Dolls",
+      "Three 6 Mafia",
+    ],
+    status: "pending",
+    isCorrect: false,
+  },
+  {
+    question: `Which author wrote 'Opticks, or a Treatise of the Reflections, Refractions, Inflections and Colours of Light'?`,
+    answer: "Isaac Newton",
+    options: [
+      "Isaac Newton",
+      "Daniel Defoe",
+      "Percy Bysshe Shelley",
+      "Walter Scott",
+    ],
+    status: "pending",
+    isCorrect: false,
+  },
+  {
+    question: `Which King Wore Two Shirts At His Execution So As Not To Shiver And Appear Frightened?`,
+    answer: "Charles I",
+    options: ["Charles I", "Louis XIV", "Louis XVI", "Charles III"],
+    status: "pending",
+    isCorrect: false,
+  },
+  {
+    question: `Which band includes 'Michael Cretu'?`,
+    answer: "Enigma",
+    options: ["Enigma", "Blue System", "Scorpions", "KMFDM"],
+    status: "pending",
+    isCorrect: false,
+  },
+  {
+    question: `Who Was Prime Minister When King Edward VIII Abdicated?`,
+    answer: "Stanley Baldwin",
+    options: [
+      "Stanley Baldwin",
+      "Anthony Eden",
+      "Winston Churchill",
+      "Bonar Law",
+    ],
+    status: "pending",
+    isCorrect: false,
+  },
+  {
+    question: `Which of these is a baseball team based in Atlanta?`,
+    answer: "Atlanta Braves",
+    options: [
+      "Atlanta Seahawks",
+      "Atlanta Braves",
+      "Atlanta Canadiens",
+      "Atlanta Impact",
+    ],
+    status: "pending",
+    isCorrect: false,
+  },
+  {
+    question: `In which country is singani a popular drink?`,
+    answer: "Bolivia",
+    options: ["Bolivia", "Ukraine", "China", "Belgium"],
+    status: "pending",
+    isCorrect: false,
+  },
+];
+
+export const categories: CategoryInterface[] = [
+  {
+    category: "Animals",
+    questions: Animals,
+  },
+  {
+    category: "History",
+    questions: History,
   },
 ];

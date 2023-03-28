@@ -60,8 +60,13 @@ const questionSlice = createSlice({
       }
     },
     getQuestions: (state, action: PayloadAction<QuestionsInterface[]>) => {
-      console.log(shuffle_questions(action.payload));
       state.questions = shuffle_questions(action.payload);
+    },
+    resetRound: (state, action: PayloadAction<[]>) => {
+      state.questions = action.payload;
+      state.isDone = false;
+      (state.questionIndex = 0), (state.answer = "");
+      state.score = 0;
     },
   },
   extraReducers: (builder) => {},
@@ -75,6 +80,7 @@ export const {
   getAnswer,
   getCurrentOptions,
   getQuestions,
+  resetRound,
 } = questionSlice.actions;
 
 export default questionSlice.reducer;

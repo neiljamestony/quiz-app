@@ -15,6 +15,21 @@ export const DashboardCard = styled.div({
   fontFamily: "Poppins",
 });
 
+export const CategoryCard = styled.div({
+  height: "400px",
+  width: "600px",
+  display: "block",
+  alignContent: "center",
+  justifyContent: "center",
+  boxShadow: "4px 4px 20px 0px #0000003d",
+  borderRadius: 8,
+  padding: 2,
+  backgroundColor: "#fff",
+  color: "#7882A4",
+  position: "relative",
+  fontFamily: "Poppins",
+});
+
 export const LoginCard = styled.div({
   height: "200px",
   width: "500px",
@@ -140,4 +155,47 @@ export const LoginBody = styled.div({
   justifyContent: "center",
   alignItems: "center",
   padding: 20,
+});
+
+export const CategoryHeader = styled.div({
+  fontSize: 45,
+  marginTop: 5,
+  height: 50,
+  color: "#7eabf2",
+});
+
+export const CategoryItemContainer = styled.div({
+  height: 90,
+  textAlign: "center",
+  width: "100%",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  fontSize: 26,
+  borderRadius: 10,
+  cursor: "pointer",
+  "&:hover": {
+    background: "#7eabf2 !important",
+    color: "#fff !important",
+  },
+});
+
+export const CategoryBody = styled.div({
+  display: "flex",
+  justifyContent: "space-evenly",
+  alignItems: "center",
+  gap: 10,
+  width: "100%",
+  height: 330,
+});
+
+export const MessageSubContainer = styled.div({
+  height: 320,
+});
+
+export const TakeAnotherQuiz = styled.button({
+  padding: 10,
+  color: "#fff",
+  backgroundColor: "#33de61",
+  width: "50%",
 });
