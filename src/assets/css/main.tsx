@@ -165,29 +165,24 @@ export const CategoryHeader = styled.div({
 });
 
 export const CategoryItemContainer = styled.div({
-  height: 70,
+  height: 150,
   textAlign: "center",
-  width: "100%",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
+  width: "90%",
   fontSize: 20,
   borderRadius: 10,
   cursor: "pointer",
   "&:hover": {
-    background: "#7eabf2 !important",
-    color: "#fff !important",
+    boxShadow: "4px 4px 20px 0px #0000003d",
   },
 });
 
 export const CategoryBody = styled.div({
-  display: "block",
+  display: "flex",
   justifyContent: "space-evenly",
   alignItems: "center",
-  gap: 10,
+  gap: 5,
   width: "100%",
   height: 330,
-  marginTop: 30,
 });
 
 export const MessageSubContainer = styled.div({

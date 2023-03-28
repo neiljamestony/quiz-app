@@ -47,11 +47,13 @@ export const shuffle_answer = (array: stringArr) => {
   return shuffled;
 };
 export interface CategoryItemInterface {
-  title: string;
   questions: QuestionsInterface[];
+  icon: string;
+  title: string;
 }
 
 export interface CategoryInterface {
   category: string;
   questions: QuestionsInterface[];
+  icon: string;
 }
