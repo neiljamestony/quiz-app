@@ -263,13 +263,110 @@ export const History: QuestionsInterface[] = [
   },
 ];
 
+export const PhilippineHistory: QuestionsInterface[] = [
+  {
+    question: `In which year was Martial Law declared in the Philippines?`,
+    answer: "1972",
+    options: ["1972", "1965", "1986", "2016"],
+    status: "pending",
+    isCorrect: false,
+  },
+  {
+    question: `How old was Jose Rizal when he was executed?`,
+    answer: "36",
+    options: ["45", "50", "36", "28"],
+    status: "pending",
+    isCorrect: false,
+  },
+  {
+    question: `Which of these isn’t a written work of Jose Rizal?`,
+    answer: "Aves De Rapina",
+    options: [
+      "Aves De Rapina",
+      "Mi Ultimo Adios",
+      "El Filibusterismo",
+      "Noli Me Tangere",
+    ],
+    status: "pending",
+    isCorrect: false,
+  },
+  {
+    question: `In what year did the Philippine Revolution against Spain begin?`,
+    answer: "1896",
+    options: ["1896", "1901", "1890", "1861"],
+    status: "pending",
+    isCorrect: false,
+  },
+  {
+    question: `Which of these wasn’t a President of the Philippines?`,
+    answer: "Jose Abad Santos",
+    options: [
+      "Jose Abad Santos",
+      "Carlos P Garcia",
+      "Elpidio Quirino",
+      "Manuel Roxas",
+    ],
+    status: "pending",
+    isCorrect: false,
+  },
+  {
+    question: `In which year did Magellan discover the Philippines?`,
+    answer: "1521",
+    options: ["1521", "1571", "1600", "1611"],
+    status: "pending",
+    isCorrect: false,
+  },
+  {
+    question: `On what date was Philippine Independence proclaimed?`,
+    answer: "June 12, 1898",
+    options: [
+      "June 26, 1898",
+      "June 12, 1898",
+      "June 12, 1901",
+      "July 4, 1898",
+    ],
+    status: "pending",
+    isCorrect: false,
+  },
+  {
+    question: `What is the name of the script widely used in Luzon before the adaptation of the Latin Alphabet?`,
+    answer: "Baybayin",
+    options: ["Baybayin", "Cuneiform", "Tangut", "Nandinagari"],
+    status: "pending",
+    isCorrect: false,
+  },
+  {
+    question: `In which year were the Gomburza priests executed?`,
+    answer: "1872",
+    options: ["1872", "1898", "1896", "1862"],
+    status: "pending",
+    isCorrect: false,
+  },
+  {
+    question: `Which of these Filipino historical figures didn’t start a rebellion against Spain?`,
+    answer: "Kapitan Tiago",
+    options: [
+      "Kapitan Tiago",
+      "Diego Silang",
+      "Francisco Dagohoy",
+      "Andres Malong",
+    ],
+    status: "pending",
+    isCorrect: false,
+  },
+];
+
 export const categories: CategoryInterface[] = [
   {
     category: "Animals",
     questions: Animals,
   },
   {
-    category: "History",
+    category: "International History",
     questions: History,
+  },
+  {
+    category: "Philippine History",
+    questions: PhilippineHistory,
   },
 ];
