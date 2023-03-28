@@ -165,13 +165,13 @@ export const CategoryHeader = styled.div({
 });
 
 export const CategoryItemContainer = styled.div({
-  height: 90,
+  height: 70,
   textAlign: "center",
   width: "100%",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  fontSize: 26,
+  fontSize: 20,
   borderRadius: 10,
   cursor: "pointer",
   "&:hover": {
@@ -181,12 +181,13 @@ export const CategoryItemContainer = styled.div({
 });
 
 export const CategoryBody = styled.div({
-  display: "flex",
+  display: "block",
   justifyContent: "space-evenly",
   alignItems: "center",
   gap: 10,
   width: "100%",
   height: 330,
+  marginTop: 30,
 });
 
 export const MessageSubContainer = styled.div({

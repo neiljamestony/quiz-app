@@ -356,6 +356,100 @@ export const PhilippineHistory: QuestionsInterface[] = [
   },
 ];
 
+export const Science: QuestionsInterface[] = [
+  {
+    question: "What is the smallest bone in the human body?",
+    answer: "Stapes",
+    options: ["Stapes", "Femur", "Tibia", "Humerus"],
+    status: "pending",
+    isCorrect: false,
+  },
+  {
+    question: "What is the function of the pancreas?",
+    answer: "Produces insulin",
+    options: [
+      "Produces insulin",
+      "Digests food",
+      "Pumps blood",
+      "Cleanses blood",
+    ],
+    status: "pending",
+    isCorrect: false,
+  },
+  {
+    question: "What is the largest organ in the human body?",
+    answer: "Skin",
+    options: ["Brain", "Skin", "Liver", "Lungs"],
+    status: "pending",
+    isCorrect: false,
+  },
+  {
+    question: "What is the function of the cerebellum?",
+    answer: "Controls movement",
+    options: [
+      "Controls movement",
+      "Regulates body temperature",
+      "Controls thirst",
+      "Regulates sleep",
+    ],
+    status: "pending",
+    isCorrect: false,
+  },
+  {
+    question: "What is the normal resting heart rate for adults?",
+    answer: "60-80 bpm",
+    options: ["60-80 bpm", "100-120 bpm", "140-160 bpm", "180-200 bpm"],
+    status: "pending",
+    isCorrect: false,
+  },
+  {
+    question: "What is the function of the lymphatic system?",
+    answer: "Fights infection",
+    options: [
+      "Fights infection",
+      "Transports oxygen",
+      "Filters blood",
+      "Digests food",
+    ],
+    status: "pending",
+    isCorrect: false,
+  },
+  {
+    question:
+      "What is the name of the muscle that separates the chest and abdominal cavity?",
+    answer: "Diaphragm",
+    options: ["Biceps", "Rectus abdominis", "Latissimus dorsi", "Diaphragm"],
+    status: "pending",
+    isCorrect: false,
+  },
+  {
+    question: "What is the function of the thyroid gland?",
+    answer: "Regulates metabolism",
+    options: [
+      "Regulates metabolism",
+      "Produces insulin",
+      "Controls hunger",
+      "Regulates sleep",
+    ],
+    status: "pending",
+    isCorrect: false,
+  },
+  {
+    question: "What is the name of the tube that carries air to the lungs?",
+    answer: "Trachea",
+    options: ["Bronchi", "Trachea", "Esophagus", "Pharynx"],
+    status: "pending",
+    isCorrect: false,
+  },
+  {
+    question: "What is the name of the pigment that gives skin its color?",
+    answer: "Melanin",
+    options: ["Melatonin", "Melanin", "Serotonin", "Endorphins"],
+    status: "pending",
+    isCorrect: false,
+  },
+];
+
 export const categories: CategoryInterface[] = [
   {
     category: "Animals",
@@ -368,5 +462,9 @@ export const categories: CategoryInterface[] = [
   {
     category: "Philippine History",
     questions: PhilippineHistory,
+  },
+  {
+    category: "Science",
+    questions: Science,
   },
 ];
