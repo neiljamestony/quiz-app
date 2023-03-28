@@ -170,7 +170,6 @@ export const CategoryItemContainer = styled.div({
   width: "90%",
   fontSize: 20,
   borderRadius: 10,
-  cursor: "pointer",
   "&:hover": {
     boxShadow: "4px 4px 20px 0px #0000003d",
   },
@@ -194,4 +193,15 @@ export const TakeAnotherQuiz = styled.button({
   color: "#fff",
   backgroundColor: "#33de61",
   width: "50%",
+});
+
+export const Passed = styled.span({
+  fontSize: 13,
+  backgroundColor: "#33de61",
+  padding: 3,
+  borderRadius: 5,
+  color: "#fff",
+  position: "absolute",
+  marginLeft: 96,
+  marginTop: -3,
 });

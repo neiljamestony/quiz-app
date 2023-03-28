@@ -14,6 +14,8 @@ export interface QuestionState {
   questionIndex: number;
   answer: string;
   optionArr: string[];
+  category: string;
+  categories: CategoryInterface[];
 }
 
 export interface AnswerInterface {
@@ -50,10 +52,17 @@ export interface CategoryItemInterface {
   questions: QuestionsInterface[];
   icon: string;
   title: string;
+  isPassed?: boolean;
+}
+
+export interface GetQuestionInterface {
+  category: string;
+  questions: QuestionsInterface[];
 }
 
 export interface CategoryInterface {
   category: string;
   questions: QuestionsInterface[];
   icon: string;
+  passed?: boolean;
 }

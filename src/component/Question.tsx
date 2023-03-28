@@ -17,9 +17,8 @@ import {
 } from "../assets/css/main";
 
 const Question = () => {
-  const { questions, questionIndex, answer, optionArr } = useAppSelector(
-    (state) => state.questionState
-  );
+  const { questions, questionIndex, answer, optionArr, category } =
+    useAppSelector((state) => state.questionState);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 

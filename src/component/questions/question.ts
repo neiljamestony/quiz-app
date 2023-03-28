@@ -355,15 +355,18 @@ export const categories: CategoryInterface[] = [
     category: "Animals",
     questions: Animals,
     icon: AnimalsIcon,
+    passed: false,
   },
   {
     category: "Philippine History",
     questions: PhilippineHistory,
     icon: PHHistoryIcon,
+    passed: false,
   },
   {
     category: "Science",
     questions: Science,
     icon: ScienceIcon,
+    passed: false,
   },
 ];

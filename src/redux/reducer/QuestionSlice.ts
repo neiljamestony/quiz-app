@@ -5,7 +5,9 @@ import {
   shuffle_answer,
   QuestionsInterface,
   shuffle_questions,
+  GetQuestionInterface,
 } from "../../interface/redux";
+import { categories } from "../../component/questions/question";
 
 const initialState: QuestionState = {
   score: 0,
@@ -19,6 +21,8 @@ const initialState: QuestionState = {
     "Douglas Adams",
   ]),
   questions: [],
+  category: "",
+  categories: categories,
 };
 
 const questionSlice = createSlice({
@@ -59,13 +63,23 @@ const questionSlice = createSlice({
         state.optionArr = shuffle_answer(action.payload);
       }
     },
-    getQuestions: (state, action: PayloadAction<QuestionsInterface[]>) => {
-      state.questions = shuffle_questions(action.payload);
+    getQuestions: (state, action: PayloadAction<GetQuestionInterface>) => {
+      state.questions = shuffle_questions(action.payload.questions);
+      state.category = action.payload.category;
     },
     resetRound: (state, action: PayloadAction<[]>) => {
+      const newCategories = state.categories.map((category) => {
+        if (category.category === state.category) {
+          category.passed = state.score < 5 ? false : true;
+        }
+        return category;
+      });
       state.questions = action.payload;
       state.isDone = false;
-      (state.questionIndex = 0), (state.answer = "");
+      state.questionIndex = 0;
+      state.answer = "";
+      state.categories = newCategories;
+      state.category = "";
       state.score = 0;
     },
   },

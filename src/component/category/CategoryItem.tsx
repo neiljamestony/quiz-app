@@ -1,5 +1,5 @@
 import { FC, useEffect } from "react";
-import { CategoryItemContainer } from "../../assets/css/main";
+import { CategoryItemContainer, Passed } from "../../assets/css/main";
 import { CategoryItemInterface } from "../../interface/redux";
 import { useAppDispatch } from "../../redux/store";
 import { getQuestions } from "../../redux/reducer/QuestionSlice";
@@ -10,13 +10,14 @@ const CategoryItem: FC<CategoryItemInterface> = ({
   questions,
   icon,
   title,
+  isPassed,
 }) => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const uname = localStorage.getItem("uname") || [];
 
   const validateCategory = (questionArray: QuestionsInterface[]) => {
-    dispatch(getQuestions(questionArray));
+    dispatch(getQuestions({ category: title, questions: questionArray }));
     navigate("/");
   };
 
@@ -25,7 +26,13 @@ const CategoryItem: FC<CategoryItemInterface> = ({
   }, [uname]);
 
   return (
-    <CategoryItemContainer onClick={() => validateCategory(questions)}>
+    <CategoryItemContainer
+      style={{
+        cursor: isPassed ? "not-allowed" : "pointer",
+      }}
+      onClick={() => (isPassed ? "" : validateCategory(questions))}
+    >
+      {isPassed && <Passed>passed</Passed>}
       <img src={icon} alt={`${icon}`} height={100} />
       <div>{title}</div>
     </CategoryItemContainer>
