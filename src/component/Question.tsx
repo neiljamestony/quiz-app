@@ -55,7 +55,7 @@ const Question = () => {
         dispatch(generateQuestion(questionIndex + 1));
         dispatch(validateRound({ answer: "", index: questionIndex }));
       }
-      dispatch(updateTimer(5));
+      dispatch(updateTimer(10));
     }
   }, [timer]);
 

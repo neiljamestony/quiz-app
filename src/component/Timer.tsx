@@ -17,7 +17,7 @@ const LinearTimer = () => {
     };
   }, [timer]);
 
-  const progress = (timer * 100) / 5;
+  const progress = (timer * 100) / 10;
 
   return (
     <LinearTimerContainer>

@@ -17,7 +17,7 @@ const initialState: QuestionState = {
   questions: [],
   category: "",
   categories: categories,
-  timer: 5,
+  timer: 10,
 };
 
 const questionSlice = createSlice({
@@ -36,7 +36,7 @@ const questionSlice = createSlice({
         state.questions[action.payload.index].isCorrect = true;
       }
       state.answer = "";
-      state.timer = 5;
+      state.timer = 10;
     },
     isRoundDone: (state, action: PayloadAction<boolean>) => {
       state.isDone = action.payload;
@@ -53,7 +53,7 @@ const questionSlice = createSlice({
     getQuestions: (state, action: PayloadAction<GetQuestionInterface>) => {
       state.questions = shuffle_questions(action.payload.questions);
       state.category = action.payload.category;
-      state.timer = 5;
+      state.timer = 10;
     },
     resetRound: (state, action: PayloadAction<[]>) => {
       const newCategories = state.categories.map((category) => {
@@ -69,7 +69,7 @@ const questionSlice = createSlice({
       state.categories = newCategories;
       state.category = "";
       state.score = 0;
-      state.timer = 5;
+      state.timer = 10;
     },
     updateTimer: (state, action: PayloadAction<number>) => {
       state.timer = action.payload;
