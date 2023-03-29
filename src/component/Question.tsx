@@ -6,6 +6,7 @@ import {
   generateQuestion,
   getAnswer,
   getCurrentOptions,
+  updateTimer,
 } from "../redux/reducer/QuestionSlice";
 import { useAppDispatch } from "../redux/store";
 import { useNavigate } from "react-router-dom";
@@ -15,9 +16,10 @@ import {
   OptionsContainer,
   NextButton,
 } from "../assets/css/main";
+import Timer from "./Timer";
 
 const Question = () => {
-  const { questions, questionIndex, answer, optionArr, category } =
+  const { questions, questionIndex, answer, optionArr, category, timer } =
     useAppSelector((state) => state.questionState);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
@@ -25,12 +27,8 @@ const Question = () => {
   useEffect(() => {
     let bool: boolean = !questions.length;
     !bool && dispatch(getCurrentOptions(questions[questionIndex].options));
-  }, [questions.length]);
-
-  useEffect(() => {
-    let bool: boolean = !questions.length;
     if (bool) return navigate("/category");
-  }, []);
+  }, [questions.length]);
 
   const validate_round = (index: number) => {
     if (questions.length === index + 1) {
@@ -45,8 +43,25 @@ const Question = () => {
     }
   };
 
+  useEffect(() => {
+    if (timer < 0) {
+      if (questions.length === questionIndex + 1) {
+        dispatch(isRoundDone(true));
+        dispatch(generateQuestion(questionIndex + 1));
+        dispatch(validateRound({ answer: "", index: questionIndex }));
+        dispatch(getCurrentOptions([]));
+      } else {
+        dispatch(getCurrentOptions(questions[questionIndex + 1].options));
+        dispatch(generateQuestion(questionIndex + 1));
+        dispatch(validateRound({ answer: "", index: questionIndex }));
+      }
+      dispatch(updateTimer(5));
+    }
+  }, [timer]);
+
   return (
     <div>
+      <Timer />
       <QuestionContainer>
         {questions.length && questions[questionIndex].question}
       </QuestionContainer>

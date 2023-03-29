@@ -13,9 +13,10 @@ export interface QuestionState {
   isDone: boolean;
   questionIndex: number;
   answer: string;
-  optionArr: string[];
+  optionArr: string[] | [];
   category: string;
   categories: CategoryInterface[];
+  timer: number;
 }
 
 export interface AnswerInterface {

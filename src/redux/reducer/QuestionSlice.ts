@@ -3,7 +3,6 @@ import {
   QuestionState,
   AnswerInterface,
   shuffle_answer,
-  QuestionsInterface,
   shuffle_questions,
   GetQuestionInterface,
 } from "../../interface/redux";
@@ -14,15 +13,11 @@ const initialState: QuestionState = {
   isDone: false,
   questionIndex: 0,
   answer: "",
-  optionArr: shuffle_answer([
-    "Neil Gaiman",
-    "Stephen King",
-    "H. P. Lovecraft",
-    "Douglas Adams",
-  ]),
+  optionArr: [],
   questions: [],
   category: "",
   categories: categories,
+  timer: 5,
 };
 
 const questionSlice = createSlice({
@@ -41,6 +36,7 @@ const questionSlice = createSlice({
         state.questions[action.payload.index].isCorrect = true;
       }
       state.answer = "";
+      state.timer = 5;
     },
     isRoundDone: (state, action: PayloadAction<boolean>) => {
       state.isDone = action.payload;
@@ -52,25 +48,17 @@ const questionSlice = createSlice({
       state.answer = action.payload;
     },
     getCurrentOptions: (state, action: PayloadAction<string[]>) => {
-      if (!action.payload.length) {
-        state.optionArr = shuffle_answer([
-          "Neil Gaiman",
-          "Stephen King",
-          "H. P. Lovecraft",
-          "Douglas Adams",
-        ]);
-      } else {
-        state.optionArr = shuffle_answer(action.payload);
-      }
+      state.optionArr = shuffle_answer(action.payload);
     },
     getQuestions: (state, action: PayloadAction<GetQuestionInterface>) => {
       state.questions = shuffle_questions(action.payload.questions);
       state.category = action.payload.category;
+      state.timer = 5;
     },
     resetRound: (state, action: PayloadAction<[]>) => {
       const newCategories = state.categories.map((category) => {
         if (category.category === state.category) {
-          category.passed = state.score < 5 ? false : true;
+          category.passed = state.score <= 5 ? false : true;
         }
         return category;
       });
@@ -81,6 +69,10 @@ const questionSlice = createSlice({
       state.categories = newCategories;
       state.category = "";
       state.score = 0;
+      state.timer = 5;
+    },
+    updateTimer: (state, action: PayloadAction<number>) => {
+      state.timer = action.payload;
     },
   },
   extraReducers: (builder) => {},
@@ -95,6 +87,7 @@ export const {
   getCurrentOptions,
   getQuestions,
   resetRound,
+  updateTimer,
 } = questionSlice.actions;
 
 export default questionSlice.reducer;

@@ -205,3 +205,20 @@ export const Passed = styled.span({
   marginLeft: 96,
   marginTop: -3,
 });
+
+export const LinearTimerContainer = styled.div({
+  display: "flex",
+  flexDirection: "row",
+  alignItems: "center",
+  width: "100%",
+  height: "5px",
+  borderRadius: "5px",
+  backgroundColor: "#ccc",
+});
+
+export const LinearTimerBar = styled.div({
+  height: "100%",
+  backgroundColor: "#00bfff",
+  borderRadius: "5px",
+  transition: "width 1s ease-in-out",
+});
