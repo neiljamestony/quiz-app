@@ -19,8 +19,9 @@ import {
 import Timer from "./Timer";
 
 const Question = () => {
-  const { questions, questionIndex, answer, optionArr, category, timer } =
-    useAppSelector((state) => state.questionState);
+  const { questions, questionIndex, answer, optionArr, timer } = useAppSelector(
+    (state) => state.questionState
+  );
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
