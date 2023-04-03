@@ -26,34 +26,33 @@ const Question = () => {
 
   useEffect(() => {
     let bool: boolean = !questions.length;
-    !bool && dispatch(getCurrentOptions(questions[questionIndex].options));
-    if (bool) return navigate("/category");
+    if (!bool) {
+      dispatch(getCurrentOptions(questions[questionIndex].options));
+    } else {
+      navigate("/category");
+    }
   }, [questions.length]);
 
-  const validate_round = (index: number) => {
+  const validate_round = (index: number): void => {
+    dispatch(validateRound({ answer: answer, index: index }));
+    dispatch(generateQuestion(index + 1));
     if (questions.length === index + 1) {
       dispatch(isRoundDone(true));
-      dispatch(generateQuestion(index + 1));
-      dispatch(validateRound({ answer: answer, index: index }));
       dispatch(getCurrentOptions([]));
     } else {
       dispatch(getCurrentOptions(questions[index + 1].options));
-      dispatch(generateQuestion(index + 1));
-      dispatch(validateRound({ answer: answer, index: index }));
     }
   };
 
   useEffect(() => {
     if (timer < 0) {
+      dispatch(validateRound({ answer: "", index: questionIndex }));
+      dispatch(generateQuestion(questionIndex + 1));
       if (questions.length === questionIndex + 1) {
         dispatch(isRoundDone(true));
-        dispatch(generateQuestion(questionIndex + 1));
-        dispatch(validateRound({ answer: "", index: questionIndex }));
         dispatch(getCurrentOptions([]));
       } else {
         dispatch(getCurrentOptions(questions[questionIndex + 1].options));
-        dispatch(generateQuestion(questionIndex + 1));
-        dispatch(validateRound({ answer: "", index: questionIndex }));
       }
       dispatch(updateTimer(10));
     }
