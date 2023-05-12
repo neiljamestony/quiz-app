@@ -170,9 +170,7 @@ export const CategoryItemContainer = styled.div({
   width: "90%",
   fontSize: 20,
   borderRadius: 10,
-  "&:hover": {
-    boxShadow: "4px 4px 20px 0px #0000003d",
-  },
+  boxShadow: "4px 4px 20px 0px #0000003d",
 });
 
 export const CategoryBody = styled.div({
