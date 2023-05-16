@@ -1,5 +1,5 @@
-import { useAppSelector } from "../redux/store";
-import { useEffect } from "react";
+import { useAppSelector } from '../redux/store';
+import { useEffect } from 'react';
 import {
   validateRound,
   isRoundDone,
@@ -7,16 +7,16 @@ import {
   getAnswer,
   getCurrentOptions,
   updateTimer,
-} from "../redux/reducer/QuestionSlice";
-import { useAppDispatch } from "../redux/store";
-import { useNavigate } from "react-router-dom";
+} from '../redux/reducer/QuestionSlice';
+import { useAppDispatch } from '../redux/store';
+import { useNavigate } from 'react-router-dom';
 import {
   QuestionContainer,
   OptionAnswer,
   OptionsContainer,
   NextButton,
-} from "../assets/css/main";
-import Timer from "./Timer";
+} from '../assets/css/main';
+import Timer from './Timer';
 
 const Question = () => {
   const { questions, questionIndex, answer, optionArr, timer } = useAppSelector(
@@ -30,7 +30,7 @@ const Question = () => {
     if (!bool) {
       dispatch(getCurrentOptions(questions[questionIndex].options));
     } else {
-      navigate("/category");
+      navigate('/category');
     }
   }, [questions.length]);
 
@@ -47,7 +47,7 @@ const Question = () => {
 
   useEffect(() => {
     if (timer < 0) {
-      dispatch(validateRound({ answer: "", index: questionIndex }));
+      dispatch(validateRound({ answer: '', index: questionIndex }));
       dispatch(generateQuestion(questionIndex + 1));
       if (questions.length === questionIndex + 1) {
         dispatch(isRoundDone(true));
@@ -71,8 +71,8 @@ const Question = () => {
             <OptionAnswer
               key={key}
               style={{
-                backgroundColor: option === answer ? "#4287f5" : "#fff",
-                color: option == answer ? "#fff" : "#7882A4",
+                backgroundColor: option === answer ? '#ab3cfc' : '#7c589a',
+                color: '#fff',
               }}
               onClick={() => dispatch(getAnswer(option))}
             >
@@ -83,9 +83,9 @@ const Question = () => {
       </OptionsContainer>
       <NextButton
         onClick={() => validate_round(questionIndex)}
-        disabled={answer === ""}
+        disabled={answer === ''}
       >
-        {questions.length === questionIndex + 1 ? "Done" : "Next"}
+        {questions.length === questionIndex + 1 ? 'Done' : 'Next'}
       </NextButton>
     </div>
   );

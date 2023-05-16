@@ -1,41 +1,41 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import {
   QuestionState,
   AnswerInterface,
   shuffle_answer,
   shuffle_questions,
   GetQuestionInterface,
-} from "../../interface/redux";
-import { categories } from "../../component/questions/question";
+} from '../../interface/redux';
+import { categories } from '../../component/questions/question';
 
 const initialState: QuestionState = {
   score: 0,
   isDone: false,
   questionIndex: 0,
-  answer: "",
+  answer: '',
   optionArr: [],
   questions: [],
-  category: "",
+  category: '',
   categories: categories,
   timer: 10,
 };
 
 const questionSlice = createSlice({
-  name: "questionSlice",
+  name: 'questionSlice',
   initialState,
   reducers: {
     validateScore: (state, action: PayloadAction<number>) => {
       state.score += action.payload;
     },
     validateRound: (state, action: PayloadAction<AnswerInterface>) => {
-      state.questions[action.payload.index].status = "done";
+      state.questions[action.payload.index].status = 'done';
       if (
         state.questions[action.payload.index].answer === action.payload.answer
       ) {
         state.score = state.score + 1;
         state.questions[action.payload.index].isCorrect = true;
       }
-      state.answer = "";
+      state.answer = '';
       state.timer = 10;
     },
     isRoundDone: (state, action: PayloadAction<boolean>) => {
@@ -65,9 +65,9 @@ const questionSlice = createSlice({
       state.questions = action.payload;
       state.isDone = false;
       state.questionIndex = 0;
-      state.answer = "";
+      state.answer = '';
       state.categories = newCategories;
-      state.category = "";
+      state.category = '';
       state.score = 0;
       state.timer = 10;
     },
