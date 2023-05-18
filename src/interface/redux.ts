@@ -1,9 +1,9 @@
-import { SetStateAction } from "react";
+import { SetStateAction } from 'react';
 export interface QuestionsInterface {
   question: string;
   answer: string;
   options: string[];
-  status: "done" | "pending";
+  status: 'done' | 'pending';
   isCorrect: boolean;
 }
 

@@ -34,8 +34,8 @@ const Question = () => {
     }
   }, [questions.length]);
 
-  const validate_round = (index: number): void => {
-    dispatch(validateRound({ answer: answer, index: index }));
+  const validate_round = (index: number, currentAnswer: string): void => {
+    dispatch(validateRound({ answer: currentAnswer, index: index }));
     dispatch(generateQuestion(index + 1));
     if (questions.length === index + 1) {
       dispatch(isRoundDone(true));
@@ -47,14 +47,7 @@ const Question = () => {
 
   useEffect(() => {
     if (timer < 0) {
-      dispatch(validateRound({ answer: '', index: questionIndex }));
-      dispatch(generateQuestion(questionIndex + 1));
-      if (questions.length === questionIndex + 1) {
-        dispatch(isRoundDone(true));
-        dispatch(getCurrentOptions([]));
-      } else {
-        dispatch(getCurrentOptions(questions[questionIndex + 1].options));
-      }
+      validate_round(questionIndex, '');
       dispatch(updateTimer(10));
     }
   }, [timer]);
@@ -82,7 +75,7 @@ const Question = () => {
         })}
       </OptionsContainer>
       <NextButton
-        onClick={() => validate_round(questionIndex)}
+        onClick={() => validate_round(questionIndex, answer)}
         disabled={answer === ''}
       >
         {questions.length === questionIndex + 1 ? 'Done' : 'Next'}

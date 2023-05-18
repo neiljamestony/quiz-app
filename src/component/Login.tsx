@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   LoginCard,
   LoginTitle,
@@ -6,42 +6,57 @@ import {
   LoginButton,
   LoginHeader,
   LoginBody,
-} from "../assets/css/main";
-import LoginIcon from "../assets/img/vite.svg";
-import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+  LoginMainContainer,
+  LoginHeaderTitle,
+} from '../assets/css/main';
+import LoginIcon from '../assets/img/vite.svg';
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
-  const unameRef = React.useRef<HTMLInputElement | null>(null);
   const navigate = useNavigate();
+  const [uname, setUname] = React.useState('');
 
   const onSubmit = () => {
-    if (unameRef.current?.value === "") {
-      toast.error("Username is required!");
-    } else {
-      localStorage.setItem("uname", JSON.stringify(unameRef.current?.value));
-      toast.success(`Welcome ${unameRef.current?.value}`);
-      navigate("/");
+    if (uname === '') {
+      toast.error('Username is required!');
     }
+    localStorage.setItem('uname', JSON.stringify(uname));
+    toast.success(`Welcome ${uname}`);
+    setUname('');
+    navigate('/');
   };
 
   return (
-    <LoginCard>
-      <LoginHeader>
-        <img src={LoginIcon} alt="login-icon" height={40} />
-        <LoginTitle>Create Account</LoginTitle>
-      </LoginHeader>
-      <LoginBody>
-        <InputField
-          name="username"
-          ref={unameRef}
-          required
-          placeholder="Type your username here"
-        />
-      </LoginBody>
+    <LoginMainContainer>
       <div>
-        <LoginButton onClick={onSubmit}>Submit</LoginButton>
+        <LoginHeaderTitle> WELCOME TO QUIZ-APP DAILY </LoginHeaderTitle>
+        <LoginCard>
+          <div>
+            <LoginHeader>
+              <img src={LoginIcon} alt='login-icon' height={40} />
+              <LoginTitle>Create Account</LoginTitle>
+            </LoginHeader>
+            <LoginBody>
+              <InputField
+                name='username'
+                value={uname}
+                onChange={(e) => setUname(e.target.value)}
+                required
+                onKeyDown={(e) =>
+                  e.key === ' ' && uname === '' && e.preventDefault()
+                }
+                placeholder='Type your username here'
+              />
+            </LoginBody>
+            <div>
+              <LoginButton onClick={onSubmit} disabled={uname === ''}>
+                Submit
+              </LoginButton>
+            </div>
+          </div>
+        </LoginCard>
       </div>
-    </LoginCard>
+    </LoginMainContainer>
   );
 }

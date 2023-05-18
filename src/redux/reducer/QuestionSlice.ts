@@ -75,7 +75,6 @@ const questionSlice = createSlice({
       state.timer = action.payload;
     },
   },
-  extraReducers: (builder) => {},
 });
 
 export const {

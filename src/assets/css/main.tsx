@@ -33,13 +33,13 @@ export const CategoryCard = styled.div({
 export const LoginCard = styled.div({
   height: '200px',
   width: '500px',
-  display: 'block',
+  display: 'inline-block',
   alignContent: 'center',
   justifyContent: 'center',
   boxShadow: '4px 4px 20px 0px #0000003d',
   borderRadius: 8,
   padding: 2,
-  backgroundColor: '#7e6df3',
+  backgroundColor: '#533b7c',
   color: '#fff',
   position: 'relative',
   fontFamily: 'Poppins',
@@ -142,8 +142,13 @@ export const LoginButton = styled.button({
   width: '50%',
   padding: 0,
   margin: 0,
-  background: '#533b7c',
+  background: '#7e6df3',
   color: '#fff',
+  '&:disabled': {
+    backgroundColor: '#9f8cca',
+    color: '#3e394c',
+    cursor: 'not-allowed',
+  },
 });
 
 export const LoginHeader = styled.div({
@@ -165,7 +170,7 @@ export const CategoryHeader = styled.div({
   fontSize: 45,
   marginTop: 5,
   height: 50,
-  color: '#fff',
+  color: '#ECC60B',
   fontFamily: 'Poppins',
 });
 
@@ -210,6 +215,12 @@ export const Passed = styled.span({
   marginTop: -1,
 });
 
+export const CategoryItemTitle = styled.div({
+  color: '#ECC60B',
+  fontSize: 20,
+  fontFamily: 'Poppins',
+});
+
 export const LinearTimerContainer = styled.div({
   display: 'flex',
   flexDirection: 'row',
@@ -225,4 +236,17 @@ export const LinearTimerBar = styled.div({
   backgroundColor: '#00bfff',
   borderRadius: '5px',
   transition: 'width 1s ease-in-out',
+});
+
+export const LoginMainContainer = styled.div({
+  display: 'flex',
+  alignContent: 'center',
+  justifyContent: 'center',
+});
+
+export const LoginHeaderTitle = styled.div({
+  fontSize: 50,
+  color: '#ECC60B',
+  textAlign: 'center',
+  marginBottom: 40,
 });

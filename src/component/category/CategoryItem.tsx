@@ -1,10 +1,14 @@
-import { FC, useEffect } from "react";
-import { CategoryItemContainer, Passed } from "../../assets/css/main";
-import { CategoryItemInterface } from "../../interface/redux";
-import { useAppDispatch } from "../../redux/store";
-import { getQuestions } from "../../redux/reducer/QuestionSlice";
-import { QuestionsInterface } from "../../interface/redux";
-import { useNavigate } from "react-router-dom";
+import { FC, useEffect } from 'react';
+import {
+  CategoryItemContainer,
+  Passed,
+  CategoryItemTitle,
+} from '../../assets/css/main';
+import { CategoryItemInterface } from '../../interface/redux';
+import { useAppDispatch } from '../../redux/store';
+import { getQuestions } from '../../redux/reducer/QuestionSlice';
+import { QuestionsInterface } from '../../interface/redux';
+import { useNavigate } from 'react-router-dom';
 
 const CategoryItem: FC<CategoryItemInterface> = ({
   questions,
@@ -14,27 +18,27 @@ const CategoryItem: FC<CategoryItemInterface> = ({
 }) => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  const uname = localStorage.getItem("uname") || [];
+  const uname = localStorage.getItem('uname') || [];
 
   const validateCategory = (questionArray: QuestionsInterface[]) => {
     dispatch(getQuestions({ category: title, questions: questionArray }));
-    navigate("/");
+    navigate('/');
   };
 
   useEffect(() => {
-    if (!uname.length) return navigate("/createAccount");
+    if (!uname.length) return navigate('/createAccount');
   }, [uname]);
 
   return (
     <CategoryItemContainer
       style={{
-        cursor: isPassed ? "not-allowed" : "pointer",
+        cursor: isPassed ? 'not-allowed' : 'pointer',
       }}
-      onClick={() => (isPassed ? "" : validateCategory(questions))}
+      onClick={() => (isPassed ? '' : validateCategory(questions))}
     >
       {isPassed && <Passed>passed</Passed>}
       <img src={icon} alt={`${icon}`} height={100} />
-      <div>{title}</div>
+      <CategoryItemTitle>{title}</CategoryItemTitle>
     </CategoryItemContainer>
   );
 };
