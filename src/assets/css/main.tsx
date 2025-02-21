@@ -231,7 +231,7 @@ export const LinearTimerContainer = styled.div({
 
 export const LinearTimerBar = styled.div({
   height: "100%",
-  backgroundColor: "#00bfff",
+  backgroundColor: "#f5c842",
   borderRadius: "5px",
   transition: "width 1s ease-in-out",
 });
