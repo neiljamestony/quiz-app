@@ -244,7 +244,7 @@ export const LoginMainContainer = styled.div({
 
 export const LoginHeaderTitle = styled.div({
   fontSize: 50,
-  color: "#ECC60B",
+  color: "#533b7c",
   textAlign: "center",
   marginBottom: 40,
 });

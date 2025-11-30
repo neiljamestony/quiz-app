@@ -32,7 +32,6 @@ export default function Login() {
       <div>
         <LoginHeaderTitle> WELCOME TO QUIZ-APP DAILY </LoginHeaderTitle>
         <LoginCard>
-          <div>
             <LoginHeader>
               <img src={LoginIcon} alt='login-icon' height={40} />
               <LoginTitle>Create Account</LoginTitle>
@@ -54,7 +53,6 @@ export default function Login() {
                 Submit
               </LoginButton>
             </div>
-          </div>
         </LoginCard>
       </div>
     </LoginMainContainer>
