@@ -49,7 +49,7 @@ export default function Login() {
               />
             </LoginBody>
             <div>
-              <LoginButton onClick={onSubmit} disabled={uname === ''}>
+              <LoginButton onClick={onSubmit} disabled={uname == "" || uname == " "}>
                 Submit
               </LoginButton>
             </div>

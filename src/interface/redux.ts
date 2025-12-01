@@ -1,4 +1,3 @@
-import { SetStateAction } from 'react';
 export interface QuestionsInterface {
   question: string;
   answer: string;
@@ -41,19 +40,19 @@ export const shuffle_questions = (array: questionArray) => {
   return shuffled;
 };
 
-export const shuffle_answer = (array: stringArr) => {
-  let shuffled = array
+export const shuffle_string = (array: stringArr) => {
+  return array
     .map((value) => ({ value, sort: Math.random() }))
     .sort((a, b) => a.sort - b.sort)
     .map(({ value }) => value);
-
-  return shuffled;
 };
 export interface CategoryItemInterface {
   questions: QuestionsInterface[];
   icon: string;
   title: string;
   isPassed?: boolean;
+  key: number;
+  backgroundColor: string;
 }
 
 export interface GetQuestionInterface {
@@ -66,4 +65,5 @@ export interface CategoryInterface {
   questions: QuestionsInterface[];
   icon: string;
   passed?: boolean;
+  backgroundColor: string;
 }

@@ -1,7 +1,7 @@
 import { QuestionsInterface, CategoryInterface } from "../../interface/redux";
-import ScienceIcon from "../../assets/img/science.gif";
-import AnimalsIcon from "../../assets/img/pawprint.gif";
-import PHHistoryIcon from "../../assets/img/history.gif";
+import ScienceIcon from "../../assets/img/react.png";
+import AnimalsIcon from "../../assets/img/paw.png";
+import PHHistoryIcon from "../../assets/img/time-past.png";
 export const questionsArr: QuestionsInterface[] = [
   {
     question: `Which author wrote 'Coraline'?`,
@@ -356,17 +356,20 @@ export const categories: CategoryInterface[] = [
     questions: Animals,
     icon: AnimalsIcon,
     passed: false,
+    backgroundColor: '#FF0000'
   },
   {
     category: "Philippine History",
     questions: PhilippineHistory,
     icon: PHHistoryIcon,
     passed: false,
+    backgroundColor: '#1cb044'
   },
   {
     category: "Science",
     questions: Science,
     icon: ScienceIcon,
     passed: false,
+    backgroundColor: '#0000FF'
   },
 ];

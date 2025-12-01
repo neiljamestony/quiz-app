@@ -1,7 +1,7 @@
 import {
   CategoryCard,
   CategoryHeader,
-  CategoryBody,
+  CategoryBody
 } from "../../assets/css/main";
 import CategoryItem from "./CategoryItem";
 import { useAppSelector } from "../../redux/store";
@@ -12,14 +12,15 @@ export default function Category() {
     <CategoryCard>
       <CategoryHeader>Select Category</CategoryHeader>
       <CategoryBody>
-        {categories.map((value, key) => {
+        {categories.map((category, key) => {
           return (
             <CategoryItem
-              isPassed={value.passed}
-              title={value.category}
-              questions={value.questions}
-              icon={value.icon}
+              isPassed={category.passed}
+              title={category.category}
+              questions={category.questions}
+              icon={category.icon}
               key={key}
+              backgroundColor={category.backgroundColor}
             />
           );
         })}

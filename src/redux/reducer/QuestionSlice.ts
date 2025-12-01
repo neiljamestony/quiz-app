@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import {
   QuestionState,
   AnswerInterface,
-  shuffle_answer,
+  shuffle_string,
   shuffle_questions,
   GetQuestionInterface,
 } from '../../interface/redux';
@@ -48,7 +48,7 @@ const questionSlice = createSlice({
       state.answer = action.payload;
     },
     getCurrentOptions: (state, action: PayloadAction<string[]>) => {
-      state.optionArr = shuffle_answer(action.payload);
+      state.optionArr = shuffle_string(action.payload);
     },
     getQuestions: (state, action: PayloadAction<GetQuestionInterface>) => {
       state.questions = shuffle_questions(action.payload.questions);

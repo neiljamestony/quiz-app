@@ -2,7 +2,7 @@ import { FC, useEffect } from 'react';
 import {
   CategoryItemContainer,
   Passed,
-  CategoryItemTitle,
+  CategoryItemTitle
 } from '../../assets/css/main';
 import { CategoryItemInterface } from '../../interface/redux';
 import { useAppDispatch } from '../../redux/store';
@@ -15,6 +15,7 @@ const CategoryItem: FC<CategoryItemInterface> = ({
   icon,
   title,
   isPassed,
+  backgroundColor
 }) => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
@@ -33,12 +34,11 @@ const CategoryItem: FC<CategoryItemInterface> = ({
     <CategoryItemContainer
       style={{
         cursor: isPassed ? 'not-allowed' : 'pointer',
+        backgroundColor: backgroundColor
       }}
       onClick={() => (isPassed ? '' : validateCategory(questions))}
     >
-      {isPassed && <Passed>passed</Passed>}
-      <img src={icon} alt={`${icon}`} height={100} />
-      <CategoryItemTitle>{title}</CategoryItemTitle>
+      {isPassed ? <Passed>COMPLETED</Passed> : <img src={icon} alt={`${icon}`} height={50} />}
     </CategoryItemContainer>
   );
 };

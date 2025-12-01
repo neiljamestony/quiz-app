@@ -9,7 +9,7 @@ export const DashboardCard = styled.div({
   boxShadow: "4px 4px 20px 0px #0000003d",
   borderRadius: 8,
   padding: 2,
-  backgroundColor: "#533b7c",
+  backgroundColor: "#fff",
   color: "#7882A4",
   position: "relative",
   fontFamily: "Poppins",
@@ -36,8 +36,8 @@ export const LoginCard = styled.div({
   boxShadow: "4px 4px 20px 0px #0000003d",
   borderRadius: 8,
   padding: 2,
-  backgroundColor: "#533b7c",
-  color: "#fff",
+  backgroundColor: "#fff",
+  color: "black",
   position: "relative",
   fontFamily: "Poppins",
 });
@@ -48,11 +48,13 @@ export const QuestionContainer = styled.div({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
+  backgroundColor: '#fff'
 });
 
 export const OptionsContainer = styled.div({
   height: 230,
   padding: 5,
+  backgroundColor: '#fff'
 });
 
 export const OptionAnswer = styled.div({
@@ -74,12 +76,12 @@ export const OptionAnswer = styled.div({
 export const NextButton = styled.button({
   marginTop: 10,
   width: "50%",
-  backgroundColor: "#7e6df3",
+  backgroundColor: "#ab3cfc",
   cursor: "pointer",
   color: "#fff",
   "&:disabled": {
-    backgroundColor: "#9f8cca",
-    color: "#3e394c",
+    backgroundColor: "#7c589a",
+    color: "#fff",
     cursor: "not-allowed",
   },
 });
@@ -110,6 +112,7 @@ export const MessageContainer = styled.div({
   justifyContent: "center",
   alignContent: "center",
   marginTop: 100,
+  backgroundColor: "#fff",
 });
 
 export const MessageBox = styled.div({
@@ -126,10 +129,10 @@ export const InputField = styled.input({
   fontFamily: "Poppins",
   borderRadius: 5,
   border: "1px solid #7882A4",
-  color: "#fff",
-  backgroundColor: "#7c589a",
+  color: "black",
+  backgroundColor: "#fff",
   "::placeholder": {
-    color: "#fff",
+    color: "#black",
   },
 });
 
@@ -167,7 +170,7 @@ export const CategoryHeader = styled.div({
   fontSize: 45,
   marginTop: 5,
   height: 50,
-  color: "#ECC60B",
+  color: "black",
   fontFamily: "Poppins",
 });
 
@@ -176,9 +179,12 @@ export const CategoryItemContainer = styled.div({
   textAlign: "center",
   width: "90%",
   fontSize: 20,
-  borderRadius: 10,
   backgroundColor: "#7c589a",
   boxShadow: "4px 4px 20px 0px #0000003d",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  borderRadius: 8,
 });
 
 export const CategoryBody = styled.div({
@@ -197,23 +203,18 @@ export const MessageSubContainer = styled.div({
 export const TakeAnotherQuiz = styled.button({
   padding: 10,
   color: "#fff",
-  backgroundColor: "#33de61",
+  backgroundColor: "#ab3cfc",
   width: "50%",
 });
 
 export const Passed = styled.span({
-  fontSize: 13,
-  backgroundColor: "#33de61",
-  padding: 3,
-  borderRadius: 5,
+  fontSize: 20,
   color: "#fff",
-  position: "absolute",
-  marginLeft: 128,
-  marginTop: -1,
+  textAlign: "center",
 });
 
 export const CategoryItemTitle = styled.div({
-  color: "#ECC60B",
+  color: "#fff",
   fontSize: 20,
   fontFamily: "Poppins",
 });
@@ -244,7 +245,7 @@ export const LoginMainContainer = styled.div({
 
 export const LoginHeaderTitle = styled.div({
   fontSize: 50,
-  color: "#533b7c",
+  color: "black",
   textAlign: "center",
   marginBottom: 40,
 });
